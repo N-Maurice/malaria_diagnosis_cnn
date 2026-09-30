@@ -1,0 +1,12 @@
+tensorflow>=2.15
+tensorboard
+numpy
+pandas
+pillow
+opencv-python
+scikit-learn
+matplotlib
+seaborn
+jupyter
+ipykernel
+tqdm
