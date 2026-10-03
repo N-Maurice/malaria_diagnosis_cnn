@@ -1,6 +1,6 @@
 # David notebook workspace
 
-Owner: David — Additional Custom CNN. Create your own notebook here; one notebook
+Owner: David — Custom ResNet. Create your own notebook here; one notebook
 per member is required. This is workflow guidance, not a shared implementation.
 Start Jupyter from the project root and select **Python (Malaria CNN)**. If the
 notebook kernel starts in this directory, use `%cd ../..` before importing `src`.
