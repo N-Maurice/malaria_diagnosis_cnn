@@ -31,10 +31,10 @@ class ScaffoldTests(unittest.TestCase):
         ):
             importlib.import_module(f"src.{module}")
         for member in (
-            "maurice_custom_resnet",
-            "laura_transfer_model_1",
-            "sarah_transfer_model_2",
-            "david_custom_cnn",
+            "david_custom_resnet",
+            "sarah_transfer_model_1",
+            "laura_transfer_model_2",
+            "maurice_custom_cnn",
         ):
             importlib.import_module(f"members.{member}.model")
         self.assertEqual(config.RANDOM_SEED, 42)

@@ -1,4 +1,4 @@
-# Transfer Learning Model 2 — Sarah
+# Custom ResNet — David
 
 Record at least seven meaningful changes, not repeated reruns. No experiments have been run.
 Compare training/validation results during development. Keep test results blank until
