@@ -62,7 +62,7 @@ Future deliverables only; no completion or performance is claimed.
 
 ## Explainability — each model
 
-### Maurice — Custom ResNet
+### David — Custom ResNet
 
 - [ ] Correct infected example
 - [ ] Correct uninfected example
@@ -71,7 +71,7 @@ Future deliverables only; no completion or performance is claimed.
 - [ ] Heatmaps interpreted
 - [ ] Model attention discussed
 
-### Laura — Transfer Learning Model 1
+### Laura — Transfer Learning Model 2
 
 - [ ] Correct infected example
 - [ ] Correct uninfected example
@@ -80,7 +80,7 @@ Future deliverables only; no completion or performance is claimed.
 - [ ] Heatmaps interpreted
 - [ ] Model attention discussed
 
-### Sarah — Transfer Learning Model 2
+### Sarah — Transfer Learning Model 1
 
 - [ ] Correct infected example
 - [ ] Correct uninfected example
@@ -89,7 +89,7 @@ Future deliverables only; no completion or performance is claimed.
 - [ ] Heatmaps interpreted
 - [ ] Model attention discussed
 
-### David — Additional Custom CNN
+### Maurice — Additional Custom CNN
 
 - [ ] Correct infected example
 - [ ] Correct uninfected example

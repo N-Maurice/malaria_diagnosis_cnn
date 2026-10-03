@@ -2,8 +2,8 @@
 
 Branches: `<member>/<type>-<short-description>`, lowercase and short.
 Allowed types: `feature`, `fix`, `docs`, `refactor`, `experiment`.
-Examples: `yourname/feature-data-pipeline`, `maurice/feature-resnet`,
-`laura/feature-transfer-model`, `sarah/feature-evaluation`, `david/fix-gradcam`.
+Examples: `yourname/feature-data-pipeline`, `david/feature-resnet`,
+`laura/feature-transfer-model`, `sarah/feature-evaluation`, `maurice/fix-gradcam`.
 
 Commits: `<type>: <short description>`.
 Examples: `feat: add data split utility`, `feat: add evaluation metrics`,
