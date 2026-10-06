@@ -8,7 +8,7 @@ no implemented architectures, training runs, experiment results, or report narra
 
 | Member | Model | Ownership |
 | --- | --- | --- |
-| david | Custom ResNet | Model + experiments |
+| david | Custom ResNet | Model + experiments  |
 | sarah | Transfer Learning Model 1 | Model + experiments |
 | laura | Transfer Learning Model 2 | Model + experiments |
 | maurice | Additional Custom CNN | Model + experiments |
