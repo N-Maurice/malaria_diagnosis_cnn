@@ -1,0 +1,53 @@
+[
+  {
+    "run_name": "efficientnetb0_exp_01_baseline",
+    "val_accuracy": 0.9456,
+    "val_precision": 0.9590,
+    "val_recall_sensitivity": 0.9318,
+    "val_auc": 0.9824
+  },
+  {
+    "run_name": "efficientnetb0_exp_02_unfreeze_last20",
+    "val_accuracy": 0.9545,
+    "val_precision": 0.9633,
+    "val_recall_sensitivity": 0.9457,
+    "val_auc": 0.9893
+  },
+  {
+    "run_name": "efficientnetb0_exp_03_unfreeze_15epochs",
+    "val_accuracy": 0.9625,
+    "val_precision": 0.9679,
+    "val_recall_sensitivity": 0.9573,
+    "val_auc": 0.9922
+  },
+  {
+    "run_name": "efficientnetb0_exp_04_sgd_optimizer",
+    "val_accuracy": 0.9625,
+    "val_precision": 0.9679,
+    "val_recall_sensitivity": 0.9573,
+    "val_auc": 0.9921
+  },
+  {
+    "run_name": "efficientnetb0_exp_05_dropout_05",
+    "val_accuracy": 0.9625,
+    "val_precision": 0.9689,
+    "val_recall_sensitivity": 0.9563,
+    "val_auc": 0.9918
+  },
+  {
+    "run_name": "efficientnetb0_exp_06_unfreeze_last40",
+    "val_accuracy": 0.9642,
+    "val_precision": 0.9667,
+    "val_recall_sensitivity": 0.9621,
+    "val_auc": 0.9934,
+    "test_sensitivity": 0.9545,
+    "test_specificity": 0.9677
+  },
+  {
+    "run_name": "efficientnetb0_exp_07_batch64",
+    "val_accuracy": 0.9640,
+    "val_precision": 0.9685,
+    "val_recall_sensitivity": 0.9597,
+    "val_auc": 0.9927
+  }
+]
