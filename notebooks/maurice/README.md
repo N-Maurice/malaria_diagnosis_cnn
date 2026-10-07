@@ -26,3 +26,22 @@ Call `set_random_seed()` before constructing pipelines or models.
 Use validation during experiment selection. Evaluate the held-out test set only
 after selection is frozen. Keep outputs small; store artifacts in your ignored
 results/figures/gradcam folders. Do not embed large images or datasets in Git.
+
+## Implemented workflow
+
+Open [additional_custom_cnn.ipynb](additional_custom_cnn.ipynb) for all sixteen
+sections above, eight planned experiments, validation comparisons, Grad-CAM,
+error analysis and a frozen final test evaluation. Supporting architecture and
+runner code live in `members/maurice_custom_cnn/`. See
+[project_review.md](project_review.md) for the structure review and reuse findings.
+
+Install the project dependencies and supply the local dataset before execution.
+The notebook checks existing shared manifests; it does not regenerate them.
+Fill `SELECTION_RATIONALE` with measured validation evidence before final test
+execution. Results, weights and logs are generated only when you run the notebook.
+
+The local `.venv` now uses Python 3.13 with the project dependencies installed.
+In VS Code choose **Select Kernel → Python Environments → .venv/bin/python**,
+then restart the kernel and rerun from the first cell. The Anaconda base kernel
+is a separate environment and will not see these packages. The named kernel is
+also registered inside `.venv` for Jupyter launched from that environment.
