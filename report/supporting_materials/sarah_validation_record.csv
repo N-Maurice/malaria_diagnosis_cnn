@@ -1,0 +1,8 @@
+run_name,val_accuracy,val_precision,val_recall_sensitivity,val_auc,test_sensitivity,test_specificity,derived_f1
+efficientnetb0_exp_01_baseline,0.9456,0.959,0.9318,0.9824,,,0.9452043579437275
+efficientnetb0_exp_02_unfreeze_last20,0.9545,0.9633,0.9457,0.9893,,,0.9544188685175484
+efficientnetb0_exp_03_unfreeze_15epochs,0.9625,0.9679,0.9573,0.9922,,,0.9625708186162477
+efficientnetb0_exp_04_sgd_optimizer,0.9625,0.9679,0.9573,0.9921,,,0.9625708186162477
+efficientnetb0_exp_05_dropout_05,0.9625,0.9689,0.9563,0.9918,,,0.9625587679202161
+efficientnetb0_exp_06_unfreeze_last40,0.9642,0.9667,0.9621,0.9934,0.9545,0.9677,0.9643945147241809
+efficientnetb0_exp_07_batch64,0.964,0.9685,0.9597,0.9927,,,0.9640799190955296

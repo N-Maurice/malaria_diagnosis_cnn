@@ -1,0 +1,16 @@
+{
+  "README.md": "50a6293f37583b7b2875b03c1f972a6b14040e4aaf01f05b933677830054fc53",
+  "docs/contribution_log.md": "571f7b54af6d6357c5830d5730dd59856f3d09d93ed9e1a1e04ff3f75c2d972f",
+  "docs/dataset_notes.md": "7009bea07194a9c9adf9ca256e0236a922f48205e9638d6e7264418990aacc80",
+  "members/david_custom_resnet/experiments_log.md": "952ac0beb525e6a1adef44f55149311d2e6f933266ee6dde772c1822afde1ba1",
+  "members/david_custom_resnet/error_analysis.md": "6ec99e1e9ff590db573186a7a97277fdc4f2447835cbbe314078be86b101b7bc",
+  "members/sarah_transfer_model_1/experiments_log.md": "8845c368990b991cc270822ed930a3af914d54dc81cff8ad228bda4f0b15f2e8",
+  "members/sarah_transfer_model_1/error_analysis.md": "f1075fa67b9c1cea00e4c2fc63d86bd1654f8a184baddffdca63fd402cec8f88",
+  "members/sarah_transfer_model_1/results/experiment_results.json": "23f9851e61ef09422f8e0729f7c3123562521dc4728bbf9aac3fdde6c6a73776",
+  "notebooks/david/custom_resnet_malaria.ipynb": "ac05a472ef8fe43ed716b1b12a9749672c357867569a764fa54bc8a92053d561",
+  "notebooks/sarah/TheNoteBook.ipynb": "c696140de750c6f37b048006bb3012b6c7171d2d410e33c3e81595f3da56e77e",
+  "notebooks/maurice/additional_custom_cnn.ipynb": "b06ab2c6d91f27387665e5b0111b2d5d1eaf2b6a10d1259a08569079b711227a",
+  "members/maurice_custom_cnn/model.py": "f43e90609ea553221331e79c90a6f90c9a55fc57a27f7f2df93def6bec5f7302",
+  "members/maurice_custom_cnn/train.py": "075e154a03082dbdb5d9bf1cb767d4d34a601a0d27b1704f703d2f5528f20103",
+  "members/laura_transfer_model_2/model.py": "655f4c2ef00f3ec1db2143c8c3f6cadd7792259e37c69366e729f59baf179c3d"
+}

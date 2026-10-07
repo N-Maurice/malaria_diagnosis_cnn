@@ -1,0 +1,583 @@
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+
+
+
+
+  Formative 2 - Malaria Diagnosis CNN +
+  Transfer Learning (Group Asignment))
+       Due Wednesday by 11:59pm
+       Points 35
+       Submitting a file upload
+       File Types pdf
+       Attempts 0
+       Allowed Attempts 3
+       Available Sep 24 at 12am - Oct 10 at 11:59pm
+
+  Malaria CNN Classification Project — Assignment Brief
+  1. Overview
+  Teams of 3–4 students design, train, and evaluate three CNN models for automated malaria diagnosis
+  from microscopic cell images — a simulated real-world medical AI challenge built around systematic
+  experimentation, rigorous evaluation, and clear communication of results.
+  The assignment tests three things at once: implementation ability (custom architectures and transfer
+  learning), critical evaluation (metrics, visualization, error analysis, explainability), and communication
+  (written report and oral defense).
+  Please make a copy of this notebook that shows how to access the
+  dataset: https://drive.google.com/file/d/15CXWfcOND1he5ibp9PtH-716kJwRW3EW/view
+
+  2. Deliverables Checklist
+             Item                                           Requirement
+                         3–4 total, one per member — 1 custom ResNet + 2 transfer-learning models; a
+   Models
+                         4th (different custom architecture, hand-implemented) for 4-person groups
+   Experiments           7+ per model (21–28+ total depending on group size), logged in TensorBoard
+   Metrics table         Accuracy, precision, recall, F1, ROC-AUC — per experiment
+   Visualizations (final Accuracy curve, loss curve, confusion matrix, ROC/AUC curve — each labeled
+   model)                and interpreted
+                         1+ technique (Grad-CAM recommended) per model, on 1 correct-infected, 1
+   Explainability
+                         correct-uninfected, and 1 incorrect example
+   Error analysis        Per model — misclassifications, overfitting/underfitting diagnosis
+   Group report          10–15 pages, scholarly style, <20% AI-generated
+   Notebook              1 per member (no shared template — each group builds its own)
+   Contribution sheet 1 per group
+
+   Experiment tracking
+                       TensorBoard screenshots/exports
+   evidence
+                       All members on screen; each gets an individual ~10–15 min slot — a 2-min
+   Oral defense
+                       overview followed by 8–13 min of investigative Q&A on their model
+  3. Model Requirements
+
+
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                        1/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+
+
+  3.1 Custom ResNet
+  A residual CNN designed by the group — not a pretrained ResNet. Must make appropriate use of
+  residual/skip connections and be trained from scratch on the malaria dataset, built using Keras'
+  Subclassing API (custom Layer / Model subclasses with an explicit call method). The residual-
+  connection design follows He et al. (2016), Deep Residual Learning for Image Recognition ; the
+  subclassing pattern follows the TensorFlow guide to making new layers and models via
+  subclassing .
+  Target: ≥90% sensitivity and ≥90% specificity on the held-out test set (see §5.1 for how this compares
+  to the transfer-learning models).
+
+  3.2 Transfer Learning Model 1
+  A pretrained architecture (VGG16, ResNet50, MobileNet, EfficientNet, DenseNet, or another justified
+  choice), fine-tuned on the malaria classification task.
+
+  3.3 Transfer Learning Model 2
+  A second, different pretrained architecture from Model 1, also fine-tuned on the task.
+
+  3.4 Additional Custom Model (4-Person Groups)
+  The fourth member designs and trains an additional custom CNN — a different design from the group's
+  ResNet in §3.1 (e.g. a deep plain CNN, or another custom architecture such as an Inception- or
+  DenseNet-style design). It must be implemented layer-by-layer rather than instantiated from a
+  framework's pretrained/library architecture — the same rule already applied to the ResNet.
+  Target: ≥90% sensitivity and ≥90% specificity on the held-out test set — the same bar as the custom
+  ResNet (see §5.1).
+
+  3.5 Individual Ownership Rules
+       Every member owns exactly one model outright — training, the 7+ experiments, documentation of
+       the decisions made, and the corresponding report section.
+       3-person groups: 1 custom ResNet + 2 transfer-learning models.
+       4-person groups: the same three, plus the additional custom model from §3.4.
+
+  3.6 Non-Participation Policy
+  If a member genuinely does not want to participate, that member receives an automatic zero.
+  If the team leader does not report the non-participation, it affects the whole group's grade instead —
+  non-reporting is treated as the group covering for the member.
+  It is the group's responsibility to deliver at least 3 models regardless of a member's non-participation.
+  The remaining members must cover the gap; the model count floor does not drop.
+
+  4. Experimentation
+
+  4.1 Requirements
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                        2/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+  Each model undergoes at least 7 documented experiments representing meaningful changes, not
+  reruns of the same configuration. Variables include:
+       Learning rate, optimizer, batch size
+       Data augmentation, dropout, L2 regularization, batch normalization
+       Custom ResNet architecture changes
+       Frozen vs. unfrozen pretrained layers, fine-tuning depth
+       Other justified architectural/training decisions
+  For each experiment, document the configuration and resulting performance — the sequence should
+  show a clear progression, not scattered attempts.
+
+  4.2 Experiment Tracking (TensorBoard)
+  TensorBoard, used consistently across all three models. Per experiment, log at minimum: model
+  name/architecture, run name, learning rate, optimizer, batch size, epochs, augmentation settings,
+  dropout/L2 settings, transfer-learning strategy (frozen/unfrozen layers), training and validation
+  loss/accuracy, and final evaluation metrics (precision, recall, F1, ROC-AUC).
+  Naming convention — descriptive, not
+  generic: custom_resnet_exp_01_baseline , mobilenet_exp_04_unfreeze_last20 , efficientnet_exp_06_lr_1e-
+  5 . Avoid test1 , final , final_final .
+
+  Required evidence at submission: TensorBoard screenshots or exported logs showing run
+  comparisons. Any claim in the report (e.g. "a lower learning rate improved generalization") must be
+  traceable to a logged run.
+  Note: In the report Appendix, provide a viewable, open-access Google Drive link containing the raw
+  TensorBoard event log directories ( logs/fit/... ) for all 21–28 runs. Additionally, include high-
+  resolution screenshots/exports of scalar dashboard comparisons in the main body/appendix.
+  (TensorBoard.dev was shut down in January 2024 and cannot be used for hosted links.)
+
+  5. Evaluation
+
+  5.1 Metrics
+  For every experiment, report accuracy, precision, recall, F1-score, and ROC-AUC in a table — the per-
+  experiment record that shows progression across the 7+ runs. In malaria-diagnostics literature
+  (including WHO's), sensitivity = recall on the infected class and specificity = true-negative rate on the
+  uninfected class; report results under both sets of names.
+  Performance target. WHO has not published one universal accuracy threshold for AI diagnostic
+  classifiers — its general guidance instead requires developers to pre-specify their own metrics and
+  thresholds, then validate on an external dataset representative of the target population
+  (WHO, Regulatory considerations on artificial intelligence for health, 2023 ). Malaria specifically
+  prioritizes sensitivity as the clinically critical metric — WHO's own minimum criteria for procured rapid
+  tests already require ≥75% detection at low parasite density with a false-positive rate under 10% (WHO
+  Global Malaria Programme ) — because missing an infection is the costlier error.
+  On the specific dataset this assignment uses (NIH/NLM's 27,558-image parasitized/uninfected cell set),
+  published CNN classifiers routinely clear both figures: a 16-layer custom CNN reached 96.99%
+  sensitivity and 97.75% specificity, outperforming a transfer-learning baseline on the same images
+  (89.00% / 94.98%) (Rajaraman et al., NIH/LHNCBC ); a sensitivity-optimized custom CNN reached
+
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                        3/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+  97.05% sensitivity (95% CI 96.23–97.70%) with an AUC of 0.9876 on a held-out split of the same
+  dataset (Deep learning–assisted malaria microscopy, PMC ).
+  Recommended targets (held-out test set): transfer-learning models (§3.2, §3.3) — ≥95%
+  sensitivity and ≥90% specificity, grounded in the published CNN literature on this exact dataset
+  above; custom, hand-implemented models (the ResNet in §3.1, and the additional model in §3.4
+  for 4-person groups) — ≥90% sensitivity and ≥90% specificity, a lower bar reflecting that these are
+  trained from scratch with no pretrained weights. Treat both as targets to report and discuss against, not
+  hard pass/fail gates — see §5.3 for why a gated numeric threshold can work against the assignment's
+  actual goal of systematic experimentation.
+
+  5.2 Required Visualizations
+  For the final version of each model (not every experiment), produce and interpret four visualizations:
+    1. Training vs. validation accuracy curve
+    2. Training vs. validation loss curve
+    3. Confusion matrix
+    4. ROC/AUC curve
+  Note: ROC-AUC appears twice by design — as a single number in the §5.1 metrics table, and as a full
+  curve here showing the sensitivity/specificity trade-off across all thresholds. These are not redundant.
+  Visualizations must be labeled and interpreted, not just pasted in.
+
+  5.3 Error Analysis
+  Examine misclassified examples per model and discuss likely causes. Identify signs of overfitting or
+  underfitting and explain what was attempted to address them.
+
+  5.4 Explainability
+  For each of the three final models, apply at least one explainability technique — Grad-CAM
+  recommended (other options: intermediate feature-map visualization, saliency maps, integrated
+  gradients, occlusion analysis; a non-Grad-CAM choice must be justified).
+  Note: When designing custom architectures using Keras Subclassing (§3.1 & 3.4), ensure that
+  intermediate layer outputs — specifically the final convolutional feature map — remain accessible
+  via tf.GradientTape() or an intermediate sub-model. Fully encapsulated models that hide convolutional
+  outputs behind nested blocks will fail to generate Grad-CAM heatmaps.
+  Minimum examples per model:
+       1 correctly classified infected cell
+       1 correctly classified uninfected cell
+       1 incorrectly classified image, where available
+  Interpret, don't just display, the heatmaps. Address: which regions drive the prediction; whether the
+  model focuses on the cell or on background; whether highlighted regions look medically meaningful;
+  how explanations differ between the custom ResNet and the pretrained models; what happens to the
+  explanation on an incorrect prediction; and whether the results reveal shortcuts or artifacts the model
+  may have learned. A heatmap is evidence to question model behavior, not proof of correct reasoning.
+
+  6. Report
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                        4/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+  One group report, 10–15 pages, scholarly style with correct citations, written in a unified voice
+  integrating all members' contributions.
+  AI Tool Usage Policy: The <20% limit applies strictly to the written narrative of the group report as
+  evaluated by institutional detection tools (e.g., Turnitin AI). Generative AI may be used for code
+  debugging, syntax checking, and formatting, but all narrative explanations, error analysis
+  interpretations, and Grad-CAM medical discussions must be original student prose.
+  Structure:
+    1. Introduction to the malaria diagnosis problem and its importance in Sub-Saharan Africa
+    2. Literature review — CNNs, residual networks, transfer learning, medical image analysis
+    3. Methodology — dataset (source and overview), preprocessing pipeline, custom ResNet design,
+       both transfer-learning models and the rationale behind each architecture choice
+    4. Results and Discussion
+        1. Experiments, per model — a table per model, one row per experiment named as it appears in
+           the TensorBoard logs, with the configuration, hyperparameter changes, and outcome
+           summarized in one note per run
+        2. Evaluation visualizations — for each model's best-performing experiment, all four required plots
+           (accuracy curve, loss curve, confusion matrix, ROC curve) placed together in a single row,
+           followed by their interpretation
+        3. Comparative analysis of the three (or four) models
+        4. Error analysis, per model — misclassifications: 2–3 representative examples per model with
+           predicted vs. true label and a plausible cause; overfitting/underfitting: state which symptom
+           appeared, citing the specific curve evidence from 4.2, and what was tried in response
+        5. Model Explainability — a dedicated subsection covering: whether models rely on meaningful
+           image regions, how explanations differ between custom ResNet and pretrained architectures,
+           whether poor/incorrect predictions show unusual attention patterns, and whether explainability
+           results increase or decrease confidence in model behavior
+        6. Critical discussion of successes, failures, and limitations
+    5. Conclusion summarizing the most important findings
+    6. References
+    7. Appendix — links to each group's Google Colab notebooks and TensorBoard logs
+
+  7. Presentation / Oral Defense
+
+  7.1 Format & Logistics
+  All members must join the call on or before the scheduled time — late arrivals may affect individual
+  grades. Each member gets an individual ~10–15 minute slot: a 2-minute high-level overview of their
+  model, followed by 8–13 minutes of investigative Q&A designed to test their grasp of the underlying
+  concepts, not just their results. The final report may be referenced during the overview; slides are
+  optional but recommended where they aid clarity.
+
+  7.2 Individual Presentation Requirements
+  Each member is questioned on the model they owned. The investigative Q&A probes:
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                        5/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+       Introduce the model — architecture and key design choices (residual connections, transfer
+       learning, augmentation, regularization, fine-tuning)
+       Explain the experiments — the most important ones run, and how they shaped later decisions
+       Present performance metrics — accuracy, precision, recall, F1, AUC, interpreted
+       Discuss error analysis — key misclassifications, overfitting/underfitting signs, and any fixes
+       attempted
+       Show one explainability example and briefly interpret it
+       Compare the model — state where it ranks among the group's three models, justified by
+       experimental evidence, not accuracy alone
+  Open item: last trimester's brief gave an explicit ranking range ("1st–5th" for 5 models). With 3 models
+  this trimester, worth stating the equivalent range ("1st–3rd") explicitly rather than leaving it implicit.
+  Students should be ready to answer: What is the model looking at when it makes this prediction? Why
+  do you believe that region matters? What happened when the model was wrong? Can Grad-CAM (or
+  your chosen technique) prove the model learned medically correct features — why or why not?
+  The full slot (2-min overview + Q&A) should not run over the allotted ~10–15 minutes — exceeding it
+  may incur grade penalties.
+
+  8. Submission Package
+
+       Group report (10–15 pages)
+       Notebook — one per member (no shared template)
+       Contribution sheet
+       Experiment tracking evidence — TensorBoard screenshots/exports showing run comparisons
+  The facilitator reserves the right to award a grade of zero for a missed presentation or a clear lack of
+  contribution.
+
+
+
+   FORMATIVE 2 RUBRIC
+
+
+
+
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                        6/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+
+          Criteria                                                       Ratings                                                  Pts
+
+    Problem
+    Framing and               5 to >3.5 pts            3.5 to >2.0 pts          2 to >1.5 pts             1.5 to >0 pts
+                              Exemplary                Proficient               Developing                Beginning
+    Literature
+                              The group report         The group frames         The problem is            No clear problem
+    Review                    defines the              the problem well         vaguely stated or         framing or
+                              malaria diagnosis        and uses at least        weakly justified.         justification.
+                              problem clearly,         five relevant            Fewer than three          Sources are
+                              ties it to real-world    sources. The             sources are used,         missing or
+                              healthcare needs,        literature review is     and the review is         irrelevant. The
+                              and justifies it         mostly descriptive       shallow or generic.       literature review is
+                              using more than          rather than critical.    Individual                absent, copied, or
+                              five high-quality        Some individual          contributions show        not integrated.
+                              and relevant             sections connect         little to no linkage      Individual models
+                              scholarly                to the literature,       to the literature.        show no evidence
+                              references. The          but not                  Citation style is         of scholarly
+                              literature review        consistently.            inconsistent or           grounding.
+                              critically compares      Citations may            poorly applied.
+                              prior work on            have minor errors.
+                              CNNs and transfer
+                              learning in medical
+                              imaging and
+                              highlights gaps
+                              that this project
+                              addresses. Each                                                                                    5 pts
+                              student shows
+                              evidence of
+                              connecting their
+                              individual model
+                              design to the
+                              literature, with
+                              correct citations
+                              and integration
+                              into the team’s
+                              narrative.
+
+
+
+
+    Model                     5 to >3.5 pts            3.5 to >2.0 pts          2 to >1.5 pts             1.5 to >0 pts          5 pts
+    Implementation            Exemplary                Proficient               Developing                Beginning
+    and                       The group                The group delivers       The group                 Most models are
+                              produces all             the required             produces fewer            missing or not
+    Experimentation
+                              models required          models, but at           models than               functional.
+                              by group size: one       least one model is       required for its          Experiments are
+                              custom ResNet (or        underdeveloped.          size, or incomplete       absent,
+                              additional custom        Each member              versions of them.         duplicated, or
+                              model for 4-             runs five or more        Individual                copied. No
+                              person groups)           experiments,             members run               TensorBoard
+                              and two transfer-        though not all are       fewer than five           evidence is
+                              learning models.         well documented          experiments, with         provided, or
+                              Each member              or justified.            minimal variation         logged runs
+
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                                      7/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+
+          Criteria                                                       Ratings                                                Pts
+                              trains at least one      Experiments are          or justification.         cannot be traced
+                              model, running a         logged in                TensorBoard               to claims in the
+                              minimum of seven         TensorBoard, but         logging is                report. Individual
+                              well-documented          naming is                inconsistent,             contributions are
+                              experiments with         inconsistent or          sparse, or missing        unclear or not
+                              systematic               some runs are            key runs.                 distinguishable.
+                              variation in             missing metrics.         Documentation is          The group shows
+                              hyperparameters,         Some                     weak or repetitive.       no evidence of
+                              architectures, or        explanations are         Group cohesion is         coordinated model
+                              data strategies.         shallow or generic.      low, with models          development.
+                              Every experiment         Group integration        presented in
+                              is logged in             is partial, with         isolation rather
+                              TensorBoard with         weak cross-              than as part of a
+                              a descriptive run        referencing              suite.
+                              name, and the            between models.
+                              submission
+                              includes
+                              TensorBoard
+                              evidence
+                              (screenshots or
+                              exported logs)
+                              showing run-to-run
+                              comparisons.
+                              Implementation
+                              choices are
+                              justified in
+                              Markdown and
+                              clearly linked to
+                              literature or theory.
+                              Group integration
+                              is seamless,
+                              showing how
+                              models
+                              complement each
+                              other.
+
+
+
+
+    Evaluation,               5 to >3.5 pts            3.5 to >2.0 pts          2 to >0.0 pts             0 pts                5 pts
+    Results, and              Exemplary                Proficient               Developing                Beginning
+    Visual Analysis           Each model               Results tables are       Results are               Results are
+                              includes a results       included for most        presented                 missing,
+                              table summarizing        models, with at          incompletely, with        meaningless, or
+                              at least seven           least five               fewer than five           copied. Metrics
+                              experiments, with        experiments per          experiments for           are absent or
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                                    8/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+
+          Criteria                                                       Ratings                                                Pts
+                              metrics such as          model. Learning          some models.              irrelevant. No
+                              accuracy,                curves, confusion        Visualizations are        visuals are
+                              precision, recall,       matrices, and            missing, unclear,         included or
+                              and F1-score.            ROC/AUC are              or not tied to            explained, and no
+                              Visual analysis is       present but              interpretation.           explainability
+                              comprehensive:           inconsistently           Grad-CAM is               technique is
+                              learning curves,         applied or poorly        missing, or               attempted. No
+                              confusion                labeled. Grad-           included without          meaningful
+                              matrices,                CAM is included          any interpretation.       evaluation or error
+                              ROC/AUC curves,          but limited to           Analysis is vague,        analysis is
+                              and Grad-CAM (or         correct predictions      generic, or fails to      attempted by the
+                              another justified        only, or                 connect                   group or
+                              explainability           interpretation           performance to            individuals.
+                              technique) are           stays at the level       design choices.
+                              presented for            of description           Individual
+                              every model,             rather than              members report
+                              including correct        analysis.                outputs without
+                              and incorrect            Individual               discussion.
+                              predictions. All         members present
+                              visuals are well         results but provide
+                              labeled,                 limited insight.
+                              referenced in the
+                              discussion, and
+                              critically
+                              interpreted —
+                              Grad-CAM
+                              interpretation goes
+                              beyond display to
+                              address which
+                              regions drive the
+                              prediction,
+                              whether the model
+                              focuses on the cell
+                              or background,
+                              and what happens
+                              to the explanation
+                              on incorrect
+                              predictions. The
+                              report compares
+                              models across the
+                              group, explaining
+                              why performance
+                              differs and what
+                              trade-offs exist.
+                              Individual
+                              members interpret
+                              their own results
+                              with depth and
+                              connect them to
+                              broader group
+                              findings.
+
+
+
+
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                                   9/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+
+          Criteria                                                       Ratings                                               Pts
+
+
+
+
+    Code Quality
+                              5 to >3.5 pts            3.5 to >2.0 pts          2 to >1.5 pts             1.5 to >0 pts
+    and
+                              Developing               Exemplary                Proficient                Beginning
+    Documentation
+                              Code for each            Code runs                Code is functional        Code is
+                              model is modular,        correctly, but is        but poorly                incomplete,
+                              reproducible, and        only partly              organized,                nonfunctional, or
+                              well-organized.          modular.                 repetitive, or            copied. Markdown
+                              Markdown cells           Markdown                 dependent on              explanations are
+                              clearly explain          explanations are         hard-coded                absent or
+                              what each block of       present but              values. Markdown          meaningless.
+                              code does, why it        uneven in quality        explanations are          Individual
+                              is necessary, and        or depth. Some           minimal, generic,         contributions
+                              how outputs              outputs are shown        or incomplete.            cannot be
+                              should be                without                  Individual                distinguished.
+                              interpreted.             interpretation.          notebooks are             Group
+                              Functions and            Individual               shallow, showing          documentation is
+                              reusable code            ownership is             limited effort to         missing or
+                              structures are           visible but              explain technical         incoherent.
+                              implemented.             inconsistent in          reasoning. Group
+                              Each student             clarity. Group           submissions lack
+                              demonstrates             submissions show         cohesion.
+                              ownership of their       variation in
+                              notebook through         documentation                                                          5 pts
+                              detailed                 quality.
+                              explanations and
+                              structured
+                              workflow. Group
+                              submissions show
+                              consistent style
+                              and
+                              documentation
+                              practices.
+
+
+
+
+    Report Quality            10 to >7.0 pts           7 to >4.0 pts            4 to >3.0 pts             3 to >0 pts         10 pts
+    and                       Exemplary                Proficient               Developing                Beginning
+    Collaboration             The report is            The report is            The report is             The report is
+                              structured with all      generally well-          weakly structured,        incoherent,
+
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                               10/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+
+          Criteria                                                       Ratings                                                  Pts
+                              major academic           written but may          with missing or           incomplete, or
+                              sections                 have minor               underdeveloped            dominated by
+                              (introduction,           weaknesses in            sections.                 bullet points
+                              literature review,       structure or tone.       Excessive reliance        instead of
+                              methodology,             Some reliance on         on bullet points          structured writing.
+                              results,                 bullet points is         replaces prose,           There is little to no
+                              discussion, and          evident, though          making the                citation or clear
+                              conclusion) and          prose still forms        document appear           evidence of
+                              written in a formal      the majority of the      like notes rather         plagiarism. The
+                              scholarly tone.          text. At least three     than an academic          majority of the text
+                              Arguments are            credible sources         paper. Citations          appears AI-
+                              developed in well-       are cited, but           are sparse,               generated or
+                              structured               references or in-        incorrect, or low-        copied. Group
+                              paragraphs with          text citations may       quality, and              collaboration is
+                              minimal use of           be inconsistent. AI      analysis is               absent, with
+                              bullet points,           reliance is              superficial. AI-          missing sections
+                              relying instead on       moderate (20–            generated text            and no integration
+                              academic prose.          40%), but student        exceeds forty             across members.
+                              In-text citations        voice is still           percent,
+                              are correct and          visible. No              weakening
+                              consistent, and a        plagiarism is            originality.
+                              properly formatted       detected.                Academic integrity
+                              reference list is        Contributions from       issues may arise
+                              included with at         all members are          from poor
+                              least five credible      present but not          paraphrasing or
+                              sources. The             fully integrated,        unattributed
+                              writing is original      creating uneven          material. Some
+                              and demonstrates         sections.                members’
+                              critical thinking,                                contributions are
+                              with less than                                    missing or
+                              twenty percent AI-                                incomplete.
+                              generated text and
+                              no evidence of
+                              plagiarism.
+                              Contributions from
+                              all team members
+                              are fully integrated
+                              into a single
+                              coherent narrative
+                              rather than
+                              stitched-together
+                              parts.
+
+
+
+
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                                 11/12
+9/30/26, 3:14 PM                              Formative 2 - Malaria Diagnosis CNN + Transfer Learning (Group Asignment))
+
+          Criteria                                                       Ratings                                                 Pts
+
+    Presentations
+                              5 to >3.5 pts                    3.5 to >2.0 pts        2 to >1.5 pts          1.5 to >0 pts
+    or Demo Video
+                              Exemplary                        Proficient             Developing             Beginning
+                              A clear, coherent 10-12          A complete             A partial or           No meaningful
+                              minute contribution with         contribution that      uneven                 contribution, or
+                              the camera on and strong         explains the           contribution.          the student
+                              technical depth. The             model and              The student            cannot explain
+                              student justifies model          shows results,         restates what          their model,
+                              and hyperparameter               but with limited       was done               experiments, or
+                              choices, explains                depth in the           without clearly        visuals. Camera
+                              optimization/regularization      rationale behind       explaining why;        off or missing
+                              strategies, and interprets       choices or in          visuals (learning      from the
+                              learning curves, confusion       the                    curves,                defense; unable
+                              matrices, and ROC/AUC            interpretation of      confusion              to answer basic
+                              visuals in real time.            visuals.               matrix,                technical
+                              Answers follow-up                Responses to           ROC/AUC) are           questions about
+                              questions confidently and        questions are          shown but not          their own code
+                              precisely, demonstrating         generally              interpreted            or results.
+                              ownership of the code            correct but            beyond surface
+                              and results and the ability      somewhat               descriptions.
+                              to connect outcomes to           generic, with          Answers to
+                              literature and dataset           occasional             technical
+                              constraints.                     uncertainty            questions are                             5 pts
+                                                               about code             vague or reliant
+                                                               details, metrics,      on teammates;
+                                                               or trade-offs.         there is limited
+                                                                                      evidence of
+                                                                                      personal
+                                                                                      ownership of
+                                                                                      the notebook or
+                                                                                      experimental
+                                                                                      decisions.
+                                                                                                                     Total Points: 35
+
+
+
+
+https://alueducation.instructure.com/courses/3147/assignments/46679                                                                 12/12
+

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-07",
+  "main_report_pages": 12,
+  "total_pages": 15,
+  "figures": 7,
+  "tables": 11,
+  "populated_indexes": 3,
+  "word_archive_valid": true,
+  "reopened_with_python_docx": true,
+  "rendered_with_libreoffice": true,
+  "synthetic_tests_passed": 11,
+  "required_sections_present": true,
+  "visual_review": "Reviewed final results/error, explainability and requirements-audit pages at readable resolution; verified each page section and no overflow.",
+  "limits": [
+    "Missing deliverables remain labelled; see Appendix B.",
+    "Narrative originality rule requires student revision; no compliance certification.",
+    "Results were not independently retrained."
+  ],
+  "includes_references_and_appendices_in_page_limit": true
+}

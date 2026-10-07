@@ -1,0 +1,56 @@
+test_experiment_comparisons (test_maurice_cnn.MauriceWorkflowTests.test_experiment_comparisons) ... ok
+test_forward_checkpoint_and_gradcam (test_maurice_cnn.MauriceWorkflowTests.test_forward_checkpoint_and_gradcam) ... WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791391651.292036       5 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791391655.644461       5 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/keras/src/backend/tensorflow/core.py:172: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+  return np.array(x)
+ok
+test_freeze_refuses_changes_and_test_uses_cache (test_maurice_cnn.MauriceWorkflowTests.test_freeze_refuses_changes_and_test_uses_cache) ... ok
+test_gradcam_connected_features (test_scaffold.ScaffoldTests.test_gradcam_connected_features) ... ok
+test_image_discovery (test_scaffold.ScaffoldTests.test_image_discovery) ... ok
+test_imports_and_config (test_scaffold.ScaffoldTests.test_imports_and_config) ... ok
+test_metrics (test_scaffold.ScaffoldTests.test_metrics) ... ok
+test_plots_and_names (test_scaffold.ScaffoldTests.test_plots_and_names) ... ok
+test_stratification_and_reproducibility (test_scaffold.ScaffoldTests.test_stratification_and_reproducibility) ... ok
+test_tensorboard_metadata (test_scaffold.ScaffoldTests.test_tensorboard_metadata) ... ok
+test_tensorflow_pipeline (test_scaffold.ScaffoldTests.test_tensorflow_pipeline) ... /home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Constant.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Compare.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Call.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: keyword.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Tuple.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Expr.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: FunctionDef.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Load.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: IsNot.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: BinOp.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Try.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Subscript.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Attribute.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Constant.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: BinOp.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+/home/maurice/Documents/Intro_ML/Formative2_group_assignment/malaria_diagnosis_cnn/.venv/lib/python3.13/site-packages/gast/astn.py:23: DeprecationWarning: Lambda.__init__ got an unexpected keyword argument '___pyct_anno'. Support for arbitrary keyword arguments is deprecated and will be removed in Python 3.15.
+  new_node = cls(
+ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 9.121s
+
+OK

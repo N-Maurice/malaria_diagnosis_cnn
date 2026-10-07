@@ -1,0 +1,24 @@
+{
+  "figures": [
+    "Implemented architecture paths; Laura\u2019s second transfer architecture is not yet evidenced.",
+    "Maurice\u2019s 4 recorded baseline epochs: partial training, not final evaluation.",
+    "ResNet: saved accuracy, loss, test confusion matrix and ROC curve together.",
+    "EfficientNet: saved notebook plots arranged in the required four-panel row.",
+    "Sarah\u2019s saved false-negative and false-positive examples with probabilities.",
+    "Sarah\u2019s correct infected, correct uninfected and incorrect positive examples.",
+    "David\u2019s saved correct-infected, correct-uninfected and incorrect examples; originals, maps and overlays preserved."
+  ],
+  "tables": [
+    "Team ownership, contributions and completion state",
+    "Committed shared manifest composition",
+    "ResNet experiment progression from recorded validation results",
+    "EfficientNet progression from recorded validation summaries",
+    "Maurice\u2019s experiment plan and evidence state",
+    "Final test rates derived from saved notebook confusion counts",
+    "David\u2019s recorded examples at threshold 0.5",
+    "Sources supporting implementation, results and contributions",
+    "Notebook and raw TensorBoard evidence links still required",
+    "Material conflicts and evidence-based treatment",
+    "Assignment requirements mapped to this concise report"
+  ]
+}

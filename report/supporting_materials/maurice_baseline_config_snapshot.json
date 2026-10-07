@@ -1,0 +1,33 @@
+{
+  "config": {
+    "number": 1,
+    "description": "baseline",
+    "hypothesis": "Establish the unregularized plain CNN baseline.",
+    "image_size": [
+      128,
+      128
+    ],
+    "filters": [
+      32,
+      64,
+      128
+    ],
+    "convolutions_per_block": 2,
+    "use_batchnorm": false,
+    "dropout": 0.0,
+    "l2": 0.0,
+    "augmentation": false,
+    "optimizer": "adam",
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 25,
+    "patience": 5,
+    "lr_schedule": false
+  },
+  "splits": {
+    "train": "31e5f2dad6cdf793df2d1339ce27664ed1083a02551a012e2253a76b0fcb48f3",
+    "val": "90501eb1ff5b3afd892e74d3e868def2f580c600daab5f2131490491770a442f",
+    "test": "8355c2720ec6d3311775d634e431db28bcdf026c223c697b8180eb74eca47123"
+  },
+  "parameters": 287137
+}
